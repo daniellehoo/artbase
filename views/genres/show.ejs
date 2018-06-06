@@ -1,0 +1,14 @@
+<% include ../partials/boilerplate %>
+
+<div class="genre" id="<%= genre.id %>">
+    <h2><%= genre.name %></h2>
+    <img src=<%= genre.img_url %> />
+
+    <% genre_artists.forEach(genre_artist => { %>
+      <div class= genre_artist>
+        <a href="/artists/<%= genre_artist.id %>"><%=genre_artist.name%></a>
+        <span><%=genre_artist.year_born%></span>
+      </div>
+    <% }) %>
+</div>
+<% include ../partials/end %>

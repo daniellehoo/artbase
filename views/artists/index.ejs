@@ -1,0 +1,17 @@
+<% include ../partials/boilerplate %>
+
+<div class="artists">
+
+  <h1>Artists</h1>
+<% artists.forEach(artist => { %>
+    <div class= artist>
+      <a href="/artists/<%= artist.id %>"><%=artist.name%></a>
+    </div>
+<% }) %>
+
+<div>
+<br>
+  <a id="newArtist" href="/artists/new">Create New Artist</a>
+</div>
+
+<% include ../partials/end %>

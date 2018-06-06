@@ -1,0 +1,19 @@
+<% include ../partials/boilerplate %>
+<div id="loginform">
+  <form action="/users/login" method="post">
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="<%= user.username %>"/>
+
+
+    <label for="password ">Password:</label>
+    <input type="password" id="password" name="password" value=""/>
+
+
+    <button type="submit">Submit</button>
+
+  </form>
+  <br>
+  <p> Not a current user? <a id="signup" href="/users/new">Click here to sign up</a>
+</div>
+<% include ../partials/end %>

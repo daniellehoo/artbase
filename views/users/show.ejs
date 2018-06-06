@@ -1,0 +1,22 @@
+<% include ../partials/boilerplate %>
+<div class="users">
+  <h1>User Homepage</h1>
+
+  <form action="/users/<%= user.id %>?_method=delete" method="post">
+    <input type="submit" value="Delete My Account"/>
+  </form>
+
+    <div class="favorites">
+
+      <h2>Favorites</h2>
+      <br>
+    <% favorite_artists.forEach(artist => { %>
+        <p><a href="/artists/<%= artist.id %>"><%= artist.name %></a></p>
+        <form action="/users/<%= user.id %>/favorites?_method=delete" method="post">
+          <input name= "artist_id" type="hidden" value="<%=artist.id%>"/>
+          <input type="submit" value="Delete From Favorites"/>
+        </form>
+    <% }) %>
+      </div>
+</div>
+<% include ../partials/end %>

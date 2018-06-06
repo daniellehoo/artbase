@@ -1,0 +1,29 @@
+<header>
+<div>
+  <nav class="navigation">
+    <ul id="navid">
+      <% if(!currentUser) { %>
+      <li class="login"><a href="/users/login">Login</a></li>
+      <% } else { %>
+        <li class="login"><a href="/users/logout">Logout</a></li>
+        <li class="myfavorites"><a href="/users/<%=currentUser.id%>">User Home</a></li>
+  <% } %>
+      <li><a href="/genres">Genres</a></li>
+      <li><a href="/artists">Artists</a></li>
+      <li><a href="/">Home</a></li>
+    </ul>
+  </nav>
+</div>
+<div id="logged">
+<% if(currentUser) { %>
+  <p>
+    Welcome, <%= currentUser.username %> [id=<%= currentUser.id%>]
+  </p>
+<% } else { %>
+  <p id="loggedinornah">
+  (Not currently logged in)
+  </p>
+</div>
+
+<% } %>
+</header>

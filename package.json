@@ -1,0 +1,46 @@
+{
+  "name": "project2_artapp",
+  "version": "1.0.0",
+  "description": "## Project Description",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "debug": "node --inspect server.js",
+    "heroku-postbuild": "npm install --production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^2.0.0",
+    "body-parser": "^1.18.2",
+    "debug": "^3.1.0",
+    "dotenv": "^5.0.1",
+    "ejs": "^2.5.8",
+    "eslint": "^4.19.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.0",
+    "node-fetch": "^2.1.2",
+    "path": "^0.12.7",
+    "pg-promise": "^8.3.3",
+    "superagent": "^3.8.2",
+    "traverson": "^6.0.3",
+    "traverson-hal": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "method-override": "^2.3.10",
+    "nodemon": "^1.17.3"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": "9.9.0",
+    "npm": "5.8.0"
+  }
+}

@@ -1,0 +1,13 @@
+<% include ../partials/boilerplate %>
+
+<div class="genres">
+
+  <h1>Genres</h1>
+
+  <% genres.forEach(genre => { %>
+  <div>
+    <a href="/genres/<%= genre.id %>"><%=genre.name%></a>
+  <% }) %>
+  </div>
+</div>
+<% include ../partials/end %>

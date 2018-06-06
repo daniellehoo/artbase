@@ -1,0 +1,34 @@
+<% include ../partials/boilerplate %>
+
+<% if( action == "new" ){ %>
+  <form action="/artists" method="post">
+<% } else if( action == "edit") { %>
+  <form action="/artists/<%= artist.id %>?_method=put" method="post">
+    <% } else { console.log(`wrong action: was ${action} but expected new or edit`) } %>
+  <form action="/artists" method="post">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<%= artist.name %>"/>
+
+    <label for="year_born">Year Born:</label>
+    <input type="text" id="year_born" name="year_born" value="<%= artist.year_born %>"/>
+
+    <label for="nationality">Nationality:</label>
+    <input type="text" id="nationality" name="nationality" value="<%= artist.nationality %>"/>
+
+    <label for="img_url">Image URL:</label>
+    <input type="text" id="img_url" name="img_url" value="<%= artist.img_url %>"/>
+
+    <label for="genre">Genre:</label>
+    <select name="genre">
+
+    <% genres.forEach(genre => { %>
+      <option value="<%= genre.id %>" <%= artist.genre_name === genre.name ? "selected=selected" : "" %>> <%= genre.name %></option>
+    <% }) %>
+    </select>
+
+  <button type="submit">Submit</button>
+
+  </form>
+
+<% include ../partials/end %>

@@ -1,0 +1,44 @@
+<% include ../partials/boilerplate %>
+
+<div class="artist" id="<%= artist.id %>">
+
+    <h2><%= artist.name %></h2>
+    <img id="artist_images" src=<%= artist.img_url %> />
+  <br>
+    <p>Hometown: <%= artistData.hometown %></p>
+    <br>
+    <p>Year Born: <%= artistData.birthday %></p>
+    <br>
+    <p>Nationality: <%= artistData.nationality %></p>
+    <br>
+    <p>Biography:
+      <% if (artistData.biography) { %>
+        <%= artistData.biography %>
+      <% } else { %>
+        Artsy.net does not have bio info for this artist
+      <% } %>
+    </p>
+    <br>
+    <a href="/genres/<%= artist.genre_id %>"><%= artist.genre_name %></a>
+  <br>
+
+<% if (currentUser) { %>
+    <form action="/users/<%= currentUser.id %>/favorites" method="post">
+      <input name= "artist_id" type="hidden" value="<%=artist.id%>"/>
+      <input type="submit" value="Add Artist to Favorites">
+    </form>
+<% } %>
+
+    <form action="/artists/<%= artist.id %>?_method=delete" method="post">
+      <input type="submit" value="Delete Artist"/>
+    </form>
+
+    <form method="get" action="edit/<%= artist.id %>">
+      <input type="submit" value="Edit Artist">
+    </form>
+
+
+
+</div>
+
+<% include ../partials/end %>
